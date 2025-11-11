@@ -1,0 +1,68 @@
+<div class="container mt-5">
+
+  <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Seafarers List
+    </span>
+  </div>
+</nav>
+  <button class="btn btn-primary mb-3" (click)="openAddModal()">Add Seafarer</button>
+
+   <div *ngIf="isLoading" class="text-center my-5">
+    <div class="spinner-border text-primary"></div>
+  </div>
+
+  <div *ngIf="!isLoading && seafarers.length > 0" class="table-responsive">
+    <table class="table table-bordered table-striped table-hover align-middle text-center">
+      <thead class="table-primary">
+        <tr>
+          <th>Name</th><th>Code</th><th>Job</th><th>Sponsor</th><th>Nationality</th><th>Birth Date</th><th>Age</th><th>Phone</th><th>Mobile</th>
+          <th>Email</th><th>NationalID</th><th>Employment Date</th><th>Insurance Date</th><th>Passport Expiry Date</th><th>Passport Number</th>
+          <th>Passport Issue Date</th><th>Visa Issue Date</th><th>Visa Expiry Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of seafarers">
+          <td>{{ s.EmployeeName }}</td>
+          <td>{{ s.EmployeeCode }}</td>
+          <td>{{ s.JobName }}</td>
+          <td>{{ s.SponsorName }}</td>
+          <td>{{ s.Nationality }}</td>
+          <td>{{ s.BirthDate }}</td>
+          <td>{{ s.Age }}</td>
+          <td>{{ s.Phone }}</td>
+          <td>{{ s.Mobile }}</td>
+          <td>{{ s.Email }}</td>
+          <td>{{ s.JNationalID }}</td>
+          <td>{{ s.EmploymentDate }}</td>
+          <td>{{ s.InsuranceDate }}</td>
+          <td>{{ s.PassportExpiryDate }}</td>
+          <td>{{ s.PassportNumber }}</td>
+          <td>{{ s.PassportIssueDate }}</td>
+          <td>{{ s.VisaIssueDate }}</td>
+          <td>{{ s.VisaExpiryDate }}</td>
+          <td class="actions"> {{ s.Actions }}
+            <button class="btn btn-sm" [ngClass]="s.IsActive ? 'btn-danger' : 'btn-success'"
+                    (click)="toggleStatus(s.EmpId, s.IsActive)">
+              {{ s.IsActive ? 'Inactive' : 'Active' }}
+            </button>
+            <button class="btn btn-sm btn-info ms-2" (click)="openEditModal(s)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <app-seafarer-modal *ngIf="showModal" [seafarer]="selectedSeafarer" (close)="closeModal()"></app-seafarer-modal> -->
+
+<app-seafarer-modal
+  *ngIf="showModal"
+  [seafarer]="selectedSeafarer"
+  (close)="closeModal($event)"
+  (saved)="handleSaved($event)"
+></app-seafarer-modal>
+
+<!-- </div> -->
+

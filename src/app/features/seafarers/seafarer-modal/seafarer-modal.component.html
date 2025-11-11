@@ -1,0 +1,95 @@
+<div class="modal d-block" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ seafarer?.EmpId ? 'Edit Seafarer' : 'Add Seafarer' }}</h5>
+        <button type="button" class="btn-close" (click)="dismiss()"></button>
+      </div>
+
+      <div class="modal-body">
+        <form #form="ngForm">
+          <!-- كل حقولك هنا -->
+          <div class="mb-3">
+            <label class="form-label">Employee Name</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.EmployeeName" name="EmployeeName">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Employee Code</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.EmployeeCode" name="EmployeeCode">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Job Name</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.JobName" name="JobName">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nationality</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.Nationality" name="Nationality">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Sponsor Name</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.SponsorName" name="SponsorName">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Birth Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.BirthDate" name="BirthDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.Age" name="Age">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.Phone" name="Phone">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.Mobile" name="Mobile">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.Email" name="Email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">NationalID</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.NationalID" name="NationalID">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Employment Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.EmploymentDate" name="EmploymentDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Insurance Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.InsuranceDate" name="InsuranceDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Passport Expiry Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.PassportExpiryDate" name="PassportExpiryDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Passport Number</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.PassportNumber" name="PassportNumber">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Passport Issue Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.PassportIssueDate" name="PassportIssueDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Visa issue Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.VisaIssueDate" name="VisaIssueDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Visa Expiry Date</label>
+            <input type="text" class="form-control" [(ngModel)]="seafarer.VisaExpiryDate" name="VisaExpiryDate">
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="dismiss()">Cancel</button>
+        <button class="btn btn-primary" (click)="save()" [disabled]="isSaving">
+          {{ isSaving ? 'Saving...' : 'Save' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

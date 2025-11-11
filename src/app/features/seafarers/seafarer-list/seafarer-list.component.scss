@@ -1,0 +1,21 @@
+.table {
+  border-radius: 10px;         
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+}
+
+.table td, .table th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table td.empty, .table th.empty {
+  width: 1%;
+}
+
+.table td.expandable:hover {
+  white-space: normal;
+  background-color: #e2e6ea;
+  cursor: pointer;
+}
