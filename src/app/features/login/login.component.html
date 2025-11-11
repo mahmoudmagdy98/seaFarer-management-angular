@@ -1,9 +1,7 @@
-<!-- login.component.html -->
 <div class="login-container" style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
   <h2 style="text-align:center;">Login</h2>
 
   <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
-    <!-- Username -->
     <div class="form-group" style="margin-bottom: 15px;">
       <label for="username">Username</label>
       <input
@@ -17,7 +15,6 @@
       >
     </div>
 
-    <!-- Password -->
     <div class="form-group" style="margin-bottom: 15px;">
       <label for="password">Password</label>
       <input
@@ -31,7 +28,6 @@
       >
     </div>
 
-    <!-- Submit Button -->
     <button
       type="submit"
       [disabled]="loginForm.invalid"

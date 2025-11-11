@@ -15,8 +15,7 @@ import { SeafarerService } from '../../../core/services/seafarer.service';
 export class SeafarerModalComponent {
   @Input() seafarer: any = {};
   @Output() close = new EventEmitter<boolean>();
- @Output() saved = new EventEmitter<any>(); // لما يتم الحفظ بنجاح
-
+ @Output() saved = new EventEmitter<any>();
 
   isSaving = false;
 
@@ -36,7 +35,6 @@ constructor( private seafarerService: SeafarerService) {}
    save() {
     this.isSaving = true;
 
-    // تجهيز الـ payload بالشكل المطلوب من الـ backend
     const payload = {
       entity: {
         EmpId: this.seafarer.EmpId || 0,
@@ -70,11 +68,9 @@ constructor( private seafarerService: SeafarerService) {}
       next: (res: any) => {
         this.isSaving = false;
         if (res.Result) {
-          // تم الحفظ بنجاح
           this.saved.emit(res);
           this.close.emit(true);
         } else {
-          // حدث خطأ من الـ backend
           alert(res.ErrorMessage || 'Save failed');
         }
       },
