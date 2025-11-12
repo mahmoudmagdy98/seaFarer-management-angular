@@ -45,12 +45,7 @@ export class SeafarerListComponent implements OnInit {
   }
 
 
-// loadSeafarers() {
-//     this.seafarerService.GetAllSeafarers().subscribe({
-//       next: (data) => this.seafarers = data,
-//       error: (err) => console.error(err)
-//     });
-//   }
+
 
   openAddModal() {
   this.selectedSeafarer = {

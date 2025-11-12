@@ -16,12 +16,26 @@ export class SeafarerService {
   constructor(private http: HttpClient) {}
 
   GetAllSeafarers(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/MarineServices/GetAllSeafarers?Direction=ltr&InCT`, this.httpOptions)
+    return this.http.get<any[]>(`${this.baseUrl}//MarineServices/GetAllSeafarers?Direction=ltr&InCT`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
+  getVendors(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.baseUrl}/LegalAffairs/FillVendor?Id=0&text=&Direction=ltr&InCT`, this.httpOptions)
+    .pipe(catchError(this.handleError));
+}
+
+getEmployees(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.baseUrl}/POS/FillEmployee?Id=0&text=&Direction=ltr&InCT`, this.httpOptions)
+    .pipe(catchError(this.handleError));
+}
+
+
+
+
+
   getSeafarerById(empId: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/MarineServices/GetSeafarer/${empId}`, this.httpOptions)
+    return this.http.get<any>(`${this.baseUrl}/POS/FillEmployee?Id=${empId}&text=&Direction=ltr&InCT`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
