@@ -74,6 +74,7 @@ handleSaved(seafarer: any) {
   } else {
     this.seafarers.push(seafarer);
   }
+   
 }
 
   openEditModal(seafarer: any) {
