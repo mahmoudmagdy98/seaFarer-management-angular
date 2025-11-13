@@ -7,6 +7,7 @@
     </span>
   </div>
 </nav>
+
   <button class="btn btn-primary mb-3" (click)="openAddModal()">Add Seafarer</button>
 
    <div *ngIf="isLoading" class="text-center my-5">
@@ -55,7 +56,6 @@
     </table>
   </div>
 
-  <!-- <app-seafarer-modal *ngIf="showModal" [seafarer]="selectedSeafarer" (close)="closeModal()"></app-seafarer-modal> -->
 
 <app-seafarer-modal
   *ngIf="showModal"
@@ -64,5 +64,4 @@
   (saved)="handleSaved($event)"
 ></app-seafarer-modal>
 
-<!-- </div> -->
 

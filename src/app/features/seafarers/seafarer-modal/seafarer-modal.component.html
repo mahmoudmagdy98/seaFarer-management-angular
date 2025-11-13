@@ -27,21 +27,7 @@
             </select>
           </div>
 
-          <!-- ✅ Sponsor Dropdown-->
-          <!-- <div class="mb-3">
-            <label class="form-label fw-bold">Select Sponsor</label>
-            <select
-              class="form-select"
-              [(ngModel)]="seafarer.VendorId"
-              name="VendorId"
-              required
 
-            >  <option value="" disabled selected>-- Choose Sponsor --</option>
-              <option *ngFor="let sponsor of sponsors" [value]="sponsor.Value">
-                {{sponsor.Text }}
-              </option>
-            </select>
-          </div> -->
 
            <div class="mb-3">
             <label class="form-label fw-bold">Sponsor</label>
@@ -51,18 +37,6 @@
             </select>
           </div>
 
-          <!-- <div class="mb-3">
-            <label class="form-label">Employee Name</label>
-            <input
-              type="text"
-              class="form-control"
-              [(ngModel)]="seafarer.EmployeeName"
-              name="EmployeeName"
-               [required]="seafarer.EmpId === 0"
-               placeholder="Enter employee name"
-
-            />
-          </div> -->
 
            <div class="mb-3">
             <label class="form-label fw-bold">Employee Name</label>
@@ -76,7 +50,7 @@
               class="form-control"
               [(ngModel)]="seafarer.EmployeeCode"
               name="EmployeeCode"
-            
+
             />
           </div>
 

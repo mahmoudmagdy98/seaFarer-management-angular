@@ -95,20 +95,5 @@ handleSaved(seafarer: any) {
 
 
 
-  // openModal(seafarer: any = null) {
-  //   this.selectedSeafarer = seafarer ? { ...seafarer } : {
 
-  //   }; // copy object
-
-  //   this.showModal = true;
-  // }
-
-  // closeModal(refresh: boolean = false) {
-  //   this.showModal = false;
-  //   this.selectedSeafarer = null;
-  //   if (refresh) this.loadSeafarers();
-  // }
-
-
-  // }
 

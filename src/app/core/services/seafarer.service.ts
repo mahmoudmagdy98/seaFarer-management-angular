@@ -39,10 +39,7 @@ getEmployees(): Observable<any[]> {
       .pipe(catchError(this.handleError));
   }
 
-  // saveSeafarer(seafarer: any): Observable<any> {
-  //   return this.http.post<any>(`${this.baseUrl}/MarineServices/SaveSeafarer?InCT`, seafarer, this.httpOptions)
-  //     .pipe(catchError(this.handleError));
-  // }
+
 
   saveSeafarer(seafarer: any): Observable<any> {
   return this.http.post<any>(
